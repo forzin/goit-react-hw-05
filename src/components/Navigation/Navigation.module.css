@@ -1,0 +1,21 @@
+.linkList {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    border-bottom: 1px solid #ff4f4faa;
+  }
+  
+  .link {
+    padding: 15px 30px;
+    color: #ff4f4faa;
+    font-size: 23px;
+    transition: all 0.3s;
+  }
+  
+  .link:hover {
+    color: #b8b8b8;
+  }
+  
+  .active {
+    color: #f0f0f0;
+  }

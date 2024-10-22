@@ -1,0 +1,34 @@
+.detailsContainer {
+    display: flex;
+    max-width: 1000px;
+    padding-top: 50px;
+}
+
+.infoMovie {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 20px;
+    margin-left: 20px;
+    padding-top: 90px;
+}
+
+.movieTitle {
+    margin-left: 0;
+}
+
+.additionals {
+    margin-top: 85px;
+}
+
+.linkBack {
+    margin-bottom: 20px
+}
+
+.linkBackButton {
+    display: flex;
+    background-color: #353535;
+    padding: 10px;
+    justify-content: center;
+}
+

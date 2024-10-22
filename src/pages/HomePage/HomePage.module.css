@@ -1,0 +1,21 @@
+.movieItem {
+    max-width: 300px;
+    border: 2px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.movieList {
+    width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: end;
+}
+
+.moviesTitle {
+    display: flex;
+    font-size: 35px;
+    justify-content: center;
+    margin-bottom: 40px;
+}

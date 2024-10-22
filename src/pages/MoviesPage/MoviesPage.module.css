@@ -1,0 +1,22 @@
+.movieList {
+    width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: end;
+}
+
+.movieItem {
+    max-width: 300px;
+    border: 2px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.formSearch {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

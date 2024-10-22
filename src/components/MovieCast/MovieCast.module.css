@@ -1,0 +1,10 @@
+.sectionTopMovies {
+    padding-top: 50px;
+}
+
+.listCasts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    gap: 50px;
+}
