@@ -1,7 +1,7 @@
 import axios from 'axios';
 import styles from './MovieDetailsPage.module.css'
 
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { useParams, Outlet } from "react-router-dom";
 
@@ -10,7 +10,6 @@ const MovieDetailsPage = () => {
 
     const [movieInfo, setMovieInfo] = useState(null);
 
-    const navigate = useNavigate();
     const location = useLocation();
 
     const url = `https://api.themoviedb.org/3/movie/${movieId}`;
@@ -39,19 +38,11 @@ const MovieDetailsPage = () => {
       return <p>Loading movie details...</p>;  
     }
 
-    const goBack = () => {
-      if (location.state && location.state.from) {
-        navigate(location.state.from);
-    } else {
-        navigate('/movies');  
-    }
-    }
-
     return (
        <div className={styles.detailsContainer}>
           <div>
             <div className={styles.linkBack}>
-              <Link className={styles.linkBackButton} onClick={(e) => { e.preventDefault(); goBack(); }}>Go back</Link>
+              <Link className={styles.linkBackButton} to={location.state && location.state.from ? location.state.from : '/movies'}>Go back</Link>
             </div>
             <img src={movieInfo.poster_path === null ? 'https://via.placeholder.com/300x450?text=No+Image&icon=camera' : `https://image.tmdb.org/t/p/w300${movieInfo.poster_path}`} alt={movieInfo.original_title} />
           </div>

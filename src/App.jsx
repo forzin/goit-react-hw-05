@@ -1,9 +1,15 @@
-import Navigation from "./components/Navigation/Navigation";
+import React, { Suspense } from 'react';
+
+const Navigation = React.lazy(() => import('./components/Navigation/Navigation'));
+const AppRoutes = React.lazy(() => import('./components/AppRoutes/AppRoutes'));
 
 function App() {
   return (
     <>
-      <Navigation /> 
+      <Suspense>
+        <Navigation />
+        <AppRoutes />
+      </Suspense>
     </>
   )
 }

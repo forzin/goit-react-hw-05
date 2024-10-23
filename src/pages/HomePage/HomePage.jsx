@@ -1,8 +1,11 @@
-import styles from './HomePage.module.css'
+import React from 'react';
+
+const MovieList = React.lazy(() => import('../../components/MovieList/MovieList'));
+
 import axios from 'axios';
 
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const HomePage = () => {
 
@@ -32,25 +35,10 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className={styles.sectionTopMovies}>
-            <h2 className={styles.moviesTitle}>Top Movies per day</h2>
-            <ul className={styles.movieList}>
-                {Array.isArray(movies) && movies.map((movie) => {
-                    return (
-                        <Link key={movie.id} state={{
-                            from: location
-                        }} to={`/movies/${movie.id}`}>
-                            <li className={styles.movieItem}>
-                               <div >
-                                   <h3>{movie.title}</h3>
-                                   <img src={movie.poster_path === null ? 'https://via.placeholder.com/300x450?text=No+Image&icon=camera' : `https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.original_title} />
-                               </div>
-                            </li>
-                        </Link>
-                    );
-                })}
-            </ul>
-        </div>
+        <MovieList 
+           movies={movies}
+           location={location}
+        />
     )
 }
 

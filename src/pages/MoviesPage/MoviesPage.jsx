@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import axios from 'axios';
 import styles from './MoviesPage.module.css'
 
 const MoviesPage = () => {
 
-    const [searchParam, setSearchParam] = useState(null);
+    const [searchParams, setSearchParams] = useSearchParams();
     const [movies, setMovies] = useState(null);
 
     const location = useLocation();
+
+    const searchParam = searchParams.get('query');
 
     const url = `https://api.themoviedb.org/3/search/movie?query=${searchParam}`;
 
@@ -29,13 +31,9 @@ const MoviesPage = () => {
           return;
         }
 
-        onAddSearchParam(searchparam);
+        setSearchParams({ query: searchparam });
   
         form.elements.searchparam.value = '';
-    }
-
-    const onAddSearchParam = (searchparam) => {
-        setSearchParam(searchparam);
     }
 
     useEffect(() => {
