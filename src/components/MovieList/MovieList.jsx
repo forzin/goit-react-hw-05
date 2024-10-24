@@ -5,7 +5,6 @@ import styles from './MovieList.module.css'
 const MovieList = ({ location, movies }) => {
     return (
         <div className={styles.sectionTopMovies}>
-            <h2 className={styles.moviesTitle}>Top Movies per day</h2>
             <ul className={styles.movieList}>
                 {Array.isArray(movies) && movies.map((movie) => {
                     return (
